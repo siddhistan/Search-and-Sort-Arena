@@ -62,8 +62,7 @@ int main()
                   case 1: 
                            printf("Welcome to Sorting\n");
                            printf("Algo Menu: \n");
-                           printf("1: Bubble sort, 2: Selection sort, 3: Insertion sort,
-                                    4: Merge sort, 5: Quick sort, 6: Heap sort\n");
+                           printf("1: Bubble sort, 2: Selection sort, 3: Insertion sort, 4: Merge sort, 5: Quick sort, 6: Heap sort\n");
 
                            printf("Enter your choice: ");
                            scanf("%d",&algo_choice);
