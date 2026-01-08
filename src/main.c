@@ -13,7 +13,7 @@ int main()
      printf("2: End the program\n");
 
   printf("enter your choice: );
-  scanf("%d",&ch);
+  scanf("%d",&choice);
 
   switch(choice)
     {
@@ -51,54 +51,69 @@ int main()
 
                            switch(algo_choice)
                              {
-                               case 1:
+                               case 1:  {
                                         printf("Bubble Sort\n");
-                                        bubble_sort(a,n);
+                                        int swaps=0,comparisons=0;
+                                        bubble_sort(a,n,&comparisons,&swaps);
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
                                             printf("%d ",a[i]);
                                           }
+
+                                        printf("swaps: %d, comparisons: %d\n",swaps,comparisons);
+
 
                                            break;
+                               }
                                         
 
-                               case 2:
+                               case 2:  {
                                         printf("Selection Sort\n");
-                                        selection_sort(a,n);
+                                        int comparisons=0,swaps=0;
+                                        selection_sort(a,n,&comparisons,&swaps);
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
                                             printf("%d ",a[i]);
                                           }
 
+                                        printf("swaps: %d, comparisons: %d\n",swaps,comparisons);
+                                 
                                             break;
+                               }
 
-                               case 3:
+                               case 3: {
                                         printf("Insertion Sort\n");
-                                        insertion_sort(a,n);
+                                        int comparisons=0,shifts=0,inversions=0;
+                                        insertion_sort(a,n,&comparisons,&shifts,&inversions);
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
                                             printf("%d ",a[i]);
                                           }
 
-                                            break;
+                                         printf("shifts: %d, comparisons: %d, inversions: %d\n",shifts,comparisons, inversions);
+
+                                            break; }
 
                                case 4:  {
                                         printf("Merge Sort\n");
                                         int lb=0,ub=n-1;
-                                        merge_sort(a,lb,ub);
+                                        int comparisons=0,inversions=0;
+                                        merge_sort(a,lb,ub,&comparisons,&inversions);
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
                                             printf("%d ",a[i]);
                                           }
 
+                                         printf("inversions: %d, comparisons: %d\n",inversions,comparisons);
+
                                              break;
                                }
 
-                               case 5:
+                               case 5:    
                                         printf("Quick Sort\n");
                                         int quick_choice;
                                         printf("Quick Menu-> 1: Lomuto, 2: Hoare, 3: Randomized");
@@ -108,12 +123,15 @@ int main()
                                             case 1: {
                                                     printf("Lomuto\n"); 
                                                     int low=0,high=n-1;
-                                                    lomuto_quick_sort(a,low, high);
+                                                    int comparisons=0,swaps=0;
+                                                    lomuto_quick_sort(a,low, high, &comparisons, &swaps);
                                                      printf("The sorted array is: \n");
                                                     for(int i=0;i<n;i++)
                                                    {
                                                      printf("%d ",a[i]);
                                                    }
+
+                                                    printf("comparisons: %d, swaps: %d", comparisons,swaps);
 
                                                       break;
                                             }
@@ -121,12 +139,15 @@ int main()
                                             case 2: {
                                                     printf("Hoare\n"); 
                                                     int low=0,high=n-1;
-                                                    hoare_quick_sort(a,low,high);
+                                                    int comparisons=0,swaps=0;
+                                                    hoare_quick_sort(a,low, high, &comparisons, &swaps);
                                                      printf("The sorted array is: \n");
                                                     for(int i=0;i<n;i++)
                                                    {
                                                      printf("%d ",a[i]);
                                                    }
+
+                                                    printf("comparisons: %d, swaps: %d", comparisons,swaps);
 
                                                       break;
                                             }
@@ -134,15 +155,20 @@ int main()
                                             case 3: {
                                                     printf("Randomized\n"); 
                                                     int low=0,high=n-1;
-                                                    randomized_quick_sort(a,low,high);
+                                                    int comparisons=0,swaps=0;
+                                                    randomized_quick_sort(a,low,high,&comparisons,&swaps);
                                                      printf("The sorted array is: \n");
                                                     for(int i=0;i<n;i++)
                                                    {
                                                      printf("%d ",a[i]);
                                                    }
 
+                                                     printf("comparisons: %d, swaps: %d", comparisons,swaps);
+                                              
                                                       break;
                                             }
+
+                                            break;
                                                      
                                             
                                             default:
@@ -152,16 +178,20 @@ int main()
                                           }
                                           
                 
-                               case 6:
+                               case 6:  {
                                         printf("Heap Sort\n");
-                                        heap_sort(a,n);
+                                        int comparisons=0,swaps=0;
+                                        heap_sort(a,n,&comparisons,&swaps);
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
                                             printf("%d",a[i]);
                                           }
 
+                                         printf("comparisons: %d, swaps: %d", comparisons,swaps);
+
                                              break;
+                               }
 
                                default:
                                         printf("Invalid choice, Please try again\n");
@@ -282,6 +312,8 @@ int main()
                   
                 }
 
+            break;
+
 
       case 2:
 
@@ -297,7 +329,6 @@ int main()
 
   return 0;
 }
-
 
 
 
