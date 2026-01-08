@@ -31,6 +31,7 @@ int main()
 
   switch(choice)
     {
+      
       case 1: 
                printf("Welcome to Sorting and Searching Arena\n");
 
@@ -51,6 +52,7 @@ int main()
                   }
         
                printf("Menu for you: \n");
+               printf("0: Exit the program\n");
                printf("1: Sorting\n");
                printf("2: Searching\n");
 
@@ -59,10 +61,13 @@ int main()
 
               switch(type_choice)
                 {
-                  case 1: 
+                        case 0:
+                                    printf("Thanks! Goodbye.\n");
+                                    return 0; 
+                        case 1: 
                            printf("Welcome to Sorting\n");
                            printf("Algo Menu: \n");
-                           printf("1: Bubble sort, 2: Selection Sort, 3: Insertion sort, 4: Merge Sort, 5: Quick Sort, 6: Heap sort");
+                           printf("0: Exit the program, 1: Bubble sort, 2: Selection Sort, 3: Insertion sort, 4: Merge Sort, 5: Quick Sort, 6: Heap sort");
 
                            printf("Enter your choice: ");
                            scanf("%d",&algo_choice);
@@ -70,6 +75,10 @@ int main()
 
                            switch(algo_choice)
                              {
+                               
+                               case 0:
+                                       printf("Thanks! Goodbye.\n");
+                                                    return 0; 
                                case 1:  {
                                         printf("Bubble Sort\n");
                                         int swaps=0,comparisons=0;
@@ -135,10 +144,14 @@ int main()
                                case 5:    
                                         printf("Quick Sort\n");
                                         int quick_choice;
-                                        printf("Quick Menu-> 1: Lomuto, 2: Hoare, 3: Randomized\n");
+                                        printf("Quick Menu-> 0: Exit, 1: Lomuto, 2: Hoare, 3: Randomized\n");
                                         scanf("%d",&quick_choice);
                                         switch(quick_choice)
                                           {
+                                            case 0:
+                                                    printf("Thanks! Goodbye.\n");
+                                                    return 0; 
+                                                     
                                             case 1: {
                                                     printf("Lomuto\n"); 
                                                     int low=0,high=n-1;
@@ -150,7 +163,7 @@ int main()
                                                      printf("%d ",a[i]);
                                                    }
 
-                                                    printf("comparisons: %d, swaps: %d", comparisons,swaps);
+                                                    printf("comparisons: %d, swaps: %d\n", comparisons,swaps);
 
                                                       break;
                                             }
@@ -166,7 +179,7 @@ int main()
                                                      printf("%d ",a[i]);
                                                    }
 
-                                                    printf("comparisons: %d, swaps: %d", comparisons,swaps);
+                                                    printf("comparisons: %d, swaps: %d\n", comparisons,swaps);
 
                                                       break;
                                             }
@@ -182,7 +195,7 @@ int main()
                                                      printf("%d ",a[i]);
                                                    }
 
-                                                     printf("comparisons: %d, swaps: %d", comparisons,swaps);
+                                                     printf("comparisons: %d, swaps: %d\n", comparisons,swaps);
                                               
                                                       break;
                                             }        
@@ -203,10 +216,10 @@ int main()
                                         printf("The sorted array is: \n");
                                         for(int i=0;i<n;i++)
                                           {
-                                            printf("%d",a[i]);
+                                            printf("%d ",a[i]);
                                           }
 
-                                         printf("comparisons: %d, swaps: %d", comparisons,swaps);
+                                         printf("comparisons: %d, swaps: %d\n", comparisons,swaps);
 
                                              break;
                                }
@@ -224,13 +237,17 @@ int main()
                     
                           printf("Welcome to Searching\n");
                            printf("Algo Menu: \n");
-                           printf("1: Linear search, 2: Binary search, 3:  Recursive Linear search, 4: Recursive Binary search\n");
+                           printf("0: Exit, 1: Linear search, 2: Binary search, 3:  Recursive Linear search, 4: Recursive Binary search\n");
 
                            printf("Enter your choice: ");
                            scanf("%d",&algo_choice);
 
                            switch(algo_choice)
                              {
+                               
+                                case 0:
+                                                    printf("Thanks! Goodbye.\n");
+                                                    return 0; 
                                  case 1:
                                    {  printf("Linear Search\n"); 
                                    
