@@ -287,6 +287,7 @@ int randomized_partition(int a[], int low, int high, int* comparisons, int* swap
 {
    int random_index=low+rand()%(high-low+1);
    swap(&a[high],&a[random_index]);
+    (*swaps)++;
 
    return partition(a,low,high,comparisons,swaps);
    
@@ -351,23 +352,20 @@ void heapify(int a[],int n,int i,int* comparisons, int * swaps)
    int left_child=2*i+1;
    int right_child=2*i+2;
 
-   if(left_child<n && a[left_child]>a[largest] ) //we check left<largest first instead of a[left]>a[largest] 
-                                                 //cuz other way around could lead to out of bounds result
-   {
-      largest=left_child;
-      (*comparisons)++;      //we don't count comparisons if condition is false cuz if 
-                            //we have out of bounds index, we don't don't evaluate the 2nd part of the && condition
-   }
-     
+  if (left_child < n)
+{
+    (*comparisons)++;                 // element comparison happens here
+    if (a[left_child] > a[largest])
+        largest = left_child;
+}
 
-    if(right_child<n && a[right_child]>a[largest] ) 
-   {
-      largest=right_child;
-      (*comparisons)++;    //we are counting the comparisons made when parent compares itself with thier children
-                           // to check whether the heap property is violated or not,
-                           // we are only counting the violations by the way
-   }
-    
+if (right_child < n)
+{
+    (*comparisons)++;                 // element comparison happens here
+    if (a[right_child] > a[largest])
+        largest = right_child;
+}
+
 
    if(largest!=i)
    {
