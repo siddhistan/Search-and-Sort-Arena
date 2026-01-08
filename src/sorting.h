@@ -1,9 +1,9 @@
 #ifndef SORTING_H
 #define SORTING_H
 
-void bubble_sort(int a[], int n);
-void selection_sort(int a[], int n);
-void insertion_sort(int a[], int n);
+void bubble_sort(int a[], int n,int *, int*);
+void selection_sort(int a[], int n,int*, int*);
+void insertion_sort(int a[], int n,int*, int*,int*);
 
 void merge_sort(int a[], int lb, int ub,int *comparisons, int * inversions);
 void merge(int a[], int lb, int mid, int ub,int* comparisons, int* inversions);
