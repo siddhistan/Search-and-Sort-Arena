@@ -1,7 +1,7 @@
 #ifndef SEARCHING_H
 #define SEARCHING_H
 
-void linear_search(int a[], int n,int key);
+int linear_search(int a[], int n,int key);
 
 int binary_search(int a[] , int n, int key);
 
