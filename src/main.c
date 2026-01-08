@@ -12,7 +12,7 @@ int main()
      printf("1: Start the program\n");
      printf("2: End the program\n");
 
-  printf("enter your choice: );
+  printf("enter your choice: ");
   scanf("%d",&choice);
 
   switch(choice)
@@ -24,7 +24,7 @@ int main()
                 printf("enter the size of array\n");
                 scanf("%d", &n);
                 int a[n];
-                printf("Enter the array elements\n");
+                printf("Enter the array elements, and enter elements in sorted order in case you select binary search\n");
                 for(int i=0;i<n;i++)
                   {
                     scanf("%d",&a[i]);
@@ -166,16 +166,15 @@ int main()
                                                      printf("comparisons: %d, swaps: %d", comparisons,swaps);
                                               
                                                       break;
-                                            }
-
-                                            break;
-                                                     
+                                            }        
                                             
                                             default:
 
                                                     printf("Invalid input, Please try again\n");
                                             
                                           }
+
+                                        break;
                                           
                 
                                case 6:  {
