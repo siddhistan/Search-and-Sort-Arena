@@ -1,9 +1,8 @@
 //BUBBLE SORT
-void bubble_sort(int a[], int n)
+void bubble_sort(int a[],int n,int*comparisons,int *swaps)
 {
     
     int temp;
-    int swaps=0,comparisons=0;
     
     for(int i=0;i<n-1;i++)
     {
@@ -14,21 +13,18 @@ void bubble_sort(int a[], int n)
                 temp=a[j];
                 a[j]=a[j+1];
                 a[j+1]=temp;
-                swaps++;
+                (*swaps)++;
             }
-            comparisons++;
+            (*comparisons)++;
         }
     }
-    
-    printf("swaps: %d, comparisons: %d\n",swaps,comparisons);
     
 }
 
 //SELECTION SORT
 
-void selection_sort(int a[], int n)
+void selection_sort(int a[], int n,int * comparisons,int*swaps)
 {
-    int comparisons=0,swaps=0;
     int min_index;
     for(int i=0;i<n-1;i++)
     {
@@ -40,26 +36,23 @@ void selection_sort(int a[], int n)
               min_index=j;
            }
 
-           comparisons++;
+           (*comparisons)++;
         }
         
         if(min_index!=i)
         {
             swap(&a[i],&a[min_index]);
-            swaps++;
+            (*swaps)++;
         }
 
     }
-
-    printf("swaps: %d,comparisons: %d\n",swaps,comparisons);
 
 }
 
 //INSERTION SORT
 
-void insertion_sort(int a[], int n)
+void insertion_sort(int a[], int n, int *comparisons, int * shifts, int* inversions)
 {
-    int comparisons=0,shifts=0;
     int temp,i,j;
     for(i=1;i<n;i++)
     {
@@ -69,13 +62,13 @@ void insertion_sort(int a[], int n)
             if(a[j]>temp)
             {
                 a[j+1]=a[j];           //NO SWAPS, ONLY SHIFTING
-                comparisons++;
-                shifts++;
+                (*comparisons)++;
+                (*shifts)++;
             }
 
             else
             {
-                comparisons++;
+                (*comparisons)++;
                 break;
             }
 
@@ -85,7 +78,7 @@ void insertion_sort(int a[], int n)
         
     }
 
-    printf("swaps: %d, comparisons: %d, shifts: %d\n",0, comparisons,shifts);
+    *inversions=*shifts;
 
 }
 
