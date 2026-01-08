@@ -19,7 +19,7 @@ int main()
      printf("1: Start the program\n");
      printf("2: End the program\n");
 
-  printf("enter your choice: ");
+  printf("enter your choice: \n");
   scanf("%d",&choice);
   clear_buffer();
 
@@ -66,7 +66,7 @@ int main()
                printf("1: Sorting\n");
                printf("2: Searching\n");
 
-              printf("Enter your type: ");
+              printf("Enter your type: \n");
               scanf("%d",&type_choice);
               clear_buffer();
 
@@ -80,7 +80,7 @@ int main()
                            printf("Algo Menu: \n");
                            printf("0: Exit the program, 1: Bubble sort, 2: Selection Sort, 3: Insertion sort, 4: Merge Sort, 5: Quick Sort, 6: Heap sort");
 
-                           printf("Enter your choice: ");
+                           printf("Enter your choice: \n");
                            scanf("%d",&algo_choice);
                           clear_buffer();
 
@@ -377,6 +377,7 @@ int main()
 
   return 0;
 }
+
 
 
 
