@@ -7,13 +7,27 @@
 
 int main()
 {
+  srand(time(NULL)); 
   int choice,type_choice,algo_choice;
+  while(1)  {
      printf("The main menu: \n");
      printf("1: Start the program\n");
      printf("2: End the program\n");
 
   printf("enter your choice: ");
   scanf("%d",&choice);
+
+    if(choice==2)
+    {
+          printf("Thanks for participating, Program ends\n");
+          break;
+    }
+
+    if (choice != 1)
+{
+    printf("Invalid choice, please try again\n");
+    continue;
+}
 
   switch(choice)
     {
@@ -23,7 +37,13 @@ int main()
                 int n;
                 printf("enter the size of array\n");
                 scanf("%d", &n);
-                int a[n];
+                int *a=(int*)malloc(n*sizeof(int));
+                if (a == NULL)
+                 {
+                     printf("Memory allocation failed\n");
+                     return 1;
+                  }
+
                 printf("Enter the array elements, and enter elements in sorted order in case you select binary search\n");
                 for(int i=0;i<n;i++)
                   {
@@ -311,18 +331,18 @@ int main()
                   
                 }
 
-            break;
+            free(a);
 
-
-      case 2:
-
-            printf("Thanks for participating, Program ends\n");
-            break;
+            break; //break of 1st case 1 in the program
+      
       
       default:
                printf("Invalid choice, please try again\n");
 
     }
+
+
+  }//while loop completes
 
   
 
