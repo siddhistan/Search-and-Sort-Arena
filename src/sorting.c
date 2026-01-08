@@ -1,4 +1,7 @@
 #include "sorting.h"
+#include <stdio.h>
+#include <stdlib.h>   // ← Add this
+#include <time.h>     // if using time()
 //BUBBLE SORT
 void bubble_sort(int a[],int n,int*comparisons,int *swaps)
 {
