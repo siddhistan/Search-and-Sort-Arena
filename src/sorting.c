@@ -1,3 +1,4 @@
+#include "sorting.h"
 //BUBBLE SORT
 void bubble_sort(int a[],int n,int*comparisons,int *swaps)
 {
