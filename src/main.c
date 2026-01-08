@@ -135,7 +135,7 @@ int main()
                                case 5:    
                                         printf("Quick Sort\n");
                                         int quick_choice;
-                                        printf("Quick Menu-> 1: Lomuto, 2: Hoare, 3: Randomized");
+                                        printf("Quick Menu-> 1: Lomuto, 2: Hoare, 3: Randomized\n");
                                         scanf("%d",&quick_choice);
                                         switch(quick_choice)
                                           {
@@ -338,6 +338,8 @@ int main()
                printf("Invalid choice, please try again\n");
 
     }
+
+    printf("\n");
 
 
   }//while loop completes
