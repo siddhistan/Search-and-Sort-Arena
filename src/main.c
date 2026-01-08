@@ -224,8 +224,7 @@ int main()
                     
                           printf("Welcome to Searching\n");
                            printf("Algo Menu: \n");
-                           printf("1: Linear search, 2: Binary search, 3:  Recursive Linear search,
-                                    4: Recursive Binary search\n");
+                           printf("1: Linear search, 2: Binary search, 3:  Recursive Linear search, 4: Recursive Binary search\n");
 
                            printf("Enter your choice: ");
                            scanf("%d",&algo_choice);
