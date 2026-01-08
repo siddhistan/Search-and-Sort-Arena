@@ -5,6 +5,11 @@
 #include "sorting.h"
 #include "searching.h"
 
+void clear_buffer() {  // ← Here
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 int main()
 {
   srand(time(NULL)); 
@@ -16,6 +21,7 @@ int main()
 
   printf("enter your choice: ");
   scanf("%d",&choice);
+  clear_buffer();
 
     if(choice==2)
     {
@@ -38,6 +44,8 @@ int main()
                 int n;
                 printf("enter the size of array\n");
                 scanf("%d", &n);
+                clear_buffer();
+        
                 int *a=(int*)malloc(n*sizeof(int));
                 if (a == NULL)
                  {
@@ -49,7 +57,9 @@ int main()
                 for(int i=0;i<n;i++)
                   {
                     scanf("%d",&a[i]);
+                    
                   }
+                 clear_buffer();
         
                printf("Menu for you: \n");
                printf("0: Exit the program\n");
@@ -58,6 +68,7 @@ int main()
 
               printf("Enter your type: ");
               scanf("%d",&type_choice);
+              clear_buffer();
 
               switch(type_choice)
                 {
@@ -71,6 +82,7 @@ int main()
 
                            printf("Enter your choice: ");
                            scanf("%d",&algo_choice);
+                          clear_buffer();
 
 
                            switch(algo_choice)
