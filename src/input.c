@@ -352,8 +352,15 @@ int main()
                                
 
                                case 2:
-                                 {   printf("Binary Search\n"); 
-                                   
+                                 {   printf("Binary Search\n");  
+
+                                  
+                                                      if (!is_sorted(a, n)) {
+                                                             printf("CRIME DETECTED: Array unsorted! Public execution in Times Square avoided—re-enter sorted array.\n");
+                                                              free(a);
+                                                              continue;  // Back to array input
+                                                            }
+                                  
                                                     int key;
                                                     printf("enter the key\n");
                                                     scanf_result=scanf("%d",&key);
@@ -410,6 +417,12 @@ int main()
 
                                case 4:
                                  { printf("Recursive Binary Search\n"); 
+
+                                                    if (!is_sorted(a, n)) {
+                                                             printf("CRIME DETECTED: Array unsorted! Public execution in Times Square avoided—re-enter sorted array.\n");
+                                                              free(a);
+                                                              continue;  // Back to array input
+                                                            }
                                    
                                                     int key;
                                                     printf("enter the key\n");
