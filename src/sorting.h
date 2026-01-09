@@ -1,6 +1,8 @@
 #ifndef SORTING_H
 #define SORTING_H
 
+int is_sorted(int arr[], int size);
+
 void bubble_sort(int a[], int n,int *, int*);
 void selection_sort(int a[], int n,int*, int*);
 void insertion_sort(int a[], int n,int*, int*,int*);
