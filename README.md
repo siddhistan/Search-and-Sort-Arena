@@ -98,6 +98,37 @@ Enter elements: 64 34 25 12 22
 
 Sorted: 12 22 25 34 64
 swaps: 8, comparisons: 23
+```
+
+## Input Validation
+
+- `clear_buffer()` is used after every `scanf` call
+- Handles mixed character and numeric input safely
+- Supports space-separated array input
+- Menu re-prompts on invalid input
+- Entering `0` exits from any menu level
+
+---
+
+## Screenshots
+
+(Add console output screenshots here)
+
+---
+
+## Purpose
+
+This project is designed as an educational tool for comparing sorting and searching algorithms using real performance metrics, strong input handling, and multiple implementations. It is suitable for DSA coursework, interviews, and hackathons.
+
+---
+
+## Future Enhancements
+
+- Automated test cases (random, sorted, reverse order)
+- File input and output support
+- Algorithm visualizations
+- CSV export of performance metrics
+
 
 
 
