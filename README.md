@@ -86,7 +86,7 @@ This project tracks algorithm efficiency during execution.
 ```bash
 gcc main.c sorting.c searching.c -o arena.exe -std=c99 -Wall
 arena.exe
-
+```
 
 ## Sample Output
 
