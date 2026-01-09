@@ -112,8 +112,10 @@ swaps: 8, comparisons: 23
 
 ## Screenshots
 
+### sorting using Quick Sort
 <img width="1483" height="758" alt="image" src="https://github.com/user-attachments/assets/46ad2f64-e730-4017-b020-1e78aa0008d0" />
 
+###Recursive Linear Search
 <img width="1521" height="780" alt="image" src="https://github.com/user-attachments/assets/240f7633-70f0-4885-bacb-f9f738c365a7" />
 
 
