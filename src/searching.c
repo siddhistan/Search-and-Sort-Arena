@@ -1,3 +1,12 @@
+
+int is_sorted(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] > arr[i + 1]) return 0;  // Not ascending
+    }
+    return 1;  // Sorted ascending
+}
+
+
 //LINEAR SEARCH
 int linear_search(int a[], int n,int key)
 {
