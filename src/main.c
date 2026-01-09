@@ -14,14 +14,21 @@ int main()
 {
   srand(time(NULL)); 
   int choice,type_choice,algo_choice;
+  int scanf_result;
   while(1)  {
      printf("The main menu: \n");
      printf("1: Start the program\n");
      printf("2: End the program\n");
 
   printf("enter your choice: \n");
-  scanf("%d",&choice);
+  scanf_result=scanf("%d",&choice);
   clear_buffer();
+
+    if (scanf_result != 1)
+    {
+       printf("Invalid choice, please try again\n");
+       continue;
+    }
 
     if(choice==2)
     {
@@ -43,8 +50,14 @@ int main()
 
                 int n;
                 printf("enter the size of array\n");
-                scanf("%d", &n);
+                scanf_result=scanf("%d", &n);
                 clear_buffer();
+
+                 if (scanf_result != 1 || n <= 0)
+                 {
+                   printf("Invalid array size\n");
+                   continue;   // goes back to main menu loop
+                 }
         
                 int *a=(int*)malloc(n*sizeof(int));
                 if (a == NULL)
@@ -54,12 +67,27 @@ int main()
                   }
 
                 printf("Enter the array elements, and enter elements in sorted order in case you select binary search\n");
+                int invalid=0;
                 for(int i=0;i<n;i++)
                   {
-                    scanf("%d",&a[i]);
+                    scanf_result=scanf("%d",&a[i]);
+
+                    if (scanf_result != 1) 
+                       {
+                          printf("Invalid element. Re-enter entire array.\n");
+                          clear_buffer();
+                          invalid = 1;
+                          break;
+                       }    
                     
                   }
-                 clear_buffer();
+
+                  if (invalid)
+                     {
+                      free(a);
+                      continue;   // restart from array size input
+                     } 
+        
         
                printf("Menu for you: \n");
                printf("0: Exit the program\n");
@@ -67,12 +95,19 @@ int main()
                printf("2: Searching\n");
 
               printf("Enter your type: \n");
-              scanf("%d",&type_choice);
+              scanf_result=scanf("%d",&type_choice);
               clear_buffer();
+
+               if (scanf_result != 1 || type_choice < 0 || type_choice > 2) 
+                    {
+                      printf("Invalid choice\n");
+                      continue;
+                    }
 
               switch(type_choice)
                 {
                         case 0:
+                                    free(a);
                                     printf("Thanks! Goodbye.\n");
                                     return 0; 
                         case 1: 
@@ -81,14 +116,21 @@ int main()
                            printf("0: Exit the program, 1: Bubble sort, 2: Selection Sort, 3: Insertion sort, 4: Merge Sort, 5: Quick Sort, 6: Heap sort");
 
                            printf("Enter your choice: \n");
-                           scanf("%d",&algo_choice);
+                          scanf_result=scanf("%d",&algo_choice);
                           clear_buffer();
+
+                          if (scanf_result != 1 || algo_choice < 0 || algo_choice > 6)
+                               {
+                                printf("Invalid choice\n");
+                                continue;
+                               }
 
 
                            switch(algo_choice)
                              {
                                
                                case 0:
+                                       free(a);
                                        printf("Thanks! Goodbye.\n");
                                                     return 0; 
                                case 1:  {
@@ -157,10 +199,20 @@ int main()
                                         printf("Quick Sort\n");
                                         int quick_choice;
                                         printf("Quick Menu-> 0: Exit, 1: Lomuto, 2: Hoare, 3: Randomized\n");
-                                        scanf("%d",&quick_choice);
+                                        scanf_result=scanf("%d",&quick_choice);
+                                        clear_buffer();
+
+                                         if (scanf_result != 1 || quick_choice < 0 || quick_choice > 3) 
+                                           {
+                                             printf("Invalid choice\n");
+                                             continue;
+                                            }
+
+                                 
                                         switch(quick_choice)
                                           {
                                             case 0:
+                                                    free(a);
                                                     printf("Thanks! Goodbye.\n");
                                                     return 0; 
                                                      
@@ -252,12 +304,21 @@ int main()
                            printf("0: Exit, 1: Linear search, 2: Binary search, 3:  Recursive Linear search, 4: Recursive Binary search\n");
 
                            printf("Enter your choice: ");
-                           scanf("%d",&algo_choice);
+                           scanf_result=scanf("%d",&algo_choice);
+                           clear_buffer();
+
+                            if (scanf_result != 1 || algo_choice < 0 || algo_choice > 4)
+                              {
+                                printf("Invalid choice\n");
+                                continue;
+                               }
+
 
                            switch(algo_choice)
                              {
                                
                                 case 0:
+                                                    free(a);
                                                     printf("Thanks! Goodbye.\n");
                                                     return 0; 
                                  case 1:
@@ -265,7 +326,15 @@ int main()
                                    
                                                     int key;
                                                     printf("enter the key\n");
-                                                    scanf("%d",&key);
+                                                    scanf_result=scanf("%d",&key);
+                                                    clear_buffer();
+
+                                                     if (scanf_result != 1) 
+                                                       {
+                                                        printf("Invalid key\n");
+                                                        continue;
+                                                       }
+                                    
 
                                                     int x=linear_search(a,n,key);
 
@@ -283,11 +352,25 @@ int main()
                                
 
                                case 2:
-                                 {   printf("Binary Search\n"); 
-                                   
+                                 {   printf("Binary Search\n");  
+
+                                  
+                                                      if (!is_sorted(a, n)) {
+                                                             printf("CRIME DETECTED: Array unsorted! Public execution in Times Square avoided-re-enter sorted array.\n");
+                                                              free(a);
+                                                              continue;  // Back to array input
+                                                            }
+                                  
                                                     int key;
                                                     printf("enter the key\n");
-                                                    scanf("%d",&key);
+                                                    scanf_result=scanf("%d",&key);
+                                                    clear_buffer();
+
+                                                     if (scanf_result != 1) 
+                                                       {
+                                                        printf("Invalid key\n");
+                                                        continue;
+                                                       }
 
                                                     int x=binary_search(a,n,key);
 
@@ -308,7 +391,14 @@ int main()
                                    
                                                     int key;
                                                     printf("enter the key\n");
-                                                    scanf("%d",&key);
+                                                    scanf_result=scanf("%d",&key);
+                                                    clear_buffer();
+
+                                                     if (scanf_result != 1) 
+                                                       {
+                                                        printf("Invalid key\n");
+                                                        continue;
+                                                       }
 
                                                     int x=recursive_linear_search(a,n-1,key); //n-1 is the last element
 
@@ -327,10 +417,24 @@ int main()
 
                                case 4:
                                  { printf("Recursive Binary Search\n"); 
+
+                                                    if (!is_sorted(a, n)) {
+                                                             printf("CRIME DETECTED: Array unsorted! Public execution in Times Square avoided-re-enter sorted array.\n");
+                                                              free(a);
+                                                              continue;  // Back to array input
+                                                            }
                                    
                                                     int key;
                                                     printf("enter the key\n");
-                                                    scanf("%d",&key);
+                                                    scanf_result=scanf("%d",&key);
+                                                    clear_buffer();
+
+                                                     if (scanf_result != 1) 
+                                                       {
+                                                        printf("Invalid key\n");
+                                                        continue;
+                                                       }
+                                  
                                                     int low=0,high=n-1;
 
                                                     int x=recursive_binary_search(a,low,high,key);
@@ -377,16 +481,6 @@ int main()
 
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
