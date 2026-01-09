@@ -2,6 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>   // ← Add this
 #include <time.h>     // if using time()
+
+
+int is_sorted(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] > arr[i + 1]) return 0;  // Not ascending
+    }
+    return 1;  // Sorted ascending
+}
+
+
 //BUBBLE SORT
 void bubble_sort(int a[],int n,int*comparisons,int *swaps)
 {
