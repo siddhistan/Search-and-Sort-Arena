@@ -112,7 +112,8 @@ swaps: 8, comparisons: 23
 
 ## Screenshots
 
-(Add console output screenshots here)
+<img width="1483" height="758" alt="image" src="https://github.com/user-attachments/assets/46ad2f64-e730-4017-b020-1e78aa0008d0" />
+
 
 ---
 
