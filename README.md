@@ -1,118 +1,116 @@
-Search-and-Sort-Arena 
-Console-based Sorting & Searching Algorithm Visualizer
-with Real-time Performance Metrics & Robust Input Handling
+# Search and Sort Arena
 
- Table of Contents
-Features
+A console-based C program that demonstrates multiple sorting and searching algorithms with real-time performance metrics and robust input handling.
 
-Performance Metrics
+---
 
-Algorithm Complexities
+## Table of Contents
 
-Tech Stack
+- Features
+- Performance Metrics
+- Algorithm Complexities
+- Tech Stack
+- Quick Start
+- Sample Output
+- Input Validation
+- Screenshots
+- Purpose
+- Future Enhancements
 
-Quick Start
+---
 
-Sample Output
+## Features
 
-Input Validation
+### Searching Algorithms
 
-Screenshots
+- Linear Search (Iterative)
+- Linear Search (Recursive)
+- Binary Search (Iterative)
+- Binary Search (Recursive)
 
- Features
-Searching Algorithms
-Linear Search (Iterative)
+### Sorting Algorithms
 
-Linear Search (Recursive)
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Heap Sort
+- Quick Sort (Three Variants)
+  - Lomuto Partition
+  - Hoare Partition
+  - Randomized Lomuto
 
-Binary Search (Iterative)
+---
 
-Binary Search (Recursive)
+## Performance Metrics
 
-Sorting Algorithms
-Bubble Sort
+This project tracks algorithm efficiency during execution.
 
-Selection Sort
+| Algorithm Type | Metrics Tracked |
+|---------------|-----------------|
+| Bubble Sort, Selection Sort | Swaps, Comparisons |
+| Insertion Sort | Shifts, Comparisons, Inversions |
+| Merge Sort | Inversions, Comparisons |
+| Quick Sort (all variants), Heap Sort | Swaps, Comparisons |
 
-Insertion Sort
+---
 
-Merge Sort
+## Algorithm Complexities
 
-Heap Sort
+| Algorithm | Best | Average | Worst | Space |
+|---------|------|---------|-------|-------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) |
+| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) |
+| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
+| Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) |
 
-Quick Sort (3 variants)
+---
 
-Lomuto Partition
+## Tech Stack
 
-Hoare Partition
+- C99 Standard
+- Dynamic memory management using malloc and free
+- Modular design using main.c, sorting.c, and searching.c
+- Input sanitization using clear_buffer()
+- srand() and rand() for randomized quick sort
+- Real-time performance profiling
 
-Randomized Lomuto
+---
 
-📊 Performance Metrics
-Unique Feature: Tracks algorithm efficiency live!
+## Quick Start
 
-Algorithm	Metrics Tracked
-Bubble, Selection	Swaps, Comparisons
-Insertion	Shifts, Comparisons, Inversions
-Merge	Inversions, Comparisons
-Quick (all), Heap	Swaps, Comparisons
-⏱️ Algorithm Complexities
-Algorithm	Best	Average	Worst	Space
-Bubble Sort	O(n)	O(n²)	O(n²)	O(1) 
-​
-Selection Sort	O(n²)	O(n²)	O(n²)	O(1)
-Insertion Sort	O(n)	O(n²)	O(n²)	O(1)
-Merge Sort	O(n log n)	O(n log n)	O(n log n)	O(n)
-Heap Sort	O(n log n)	O(n log n)	O(n log n)	O(1)
-Quick Sort	O(n log n)	O(n log n)	O(n²)	O(log n)
-🛠️ Tech Stack
-text
-✅ C99 Standard
-✅ Dynamic Memory (malloc/free)
-✅ Modular Design (main.c + sorting.c + searching.c)
-✅ Input Sanitization (clear_buffer())
-✅ srand()/rand() for Quick Sort
-✅ Performance Profiling
-🚀 Quick Start
-bash
-# Windows (Command Prompt)
+### Windows (Command Prompt)
+
+```bash
 gcc main.c sorting.c searching.c -o arena.exe -std=c99 -Wall
 arena.exe
 
-# Linux/Mac  
-gcc main.c sorting.c searching.c -o arena -std=c99 -Wall
-./arena
-📱 Sample Output
-text
+
+## Sample Output
+
+```text
 === Sorting & Searching Arena ===
 Enter size: 5
 Enter elements: 64 34 25 12 22
 > Sorting > Quick Sort > Randomized
 
 Sorted: 12 22 25 34 64
-swaps: 8, comparisons: 23 
- Input Validation
-text
-🔹 clear_buffer() after every scanf()
-🔹 Handles letters/numbers mix gracefully
-🔹 Space-separated array input supported
-🔹 Menu re-prompts on invalid input
-🔹 0: Exit from any level
-📸 Screenshots
-(Add your console output screenshots here)
+swaps: 8, comparisons: 23
 
-text
-[Insert arena running screenshot]
- Purpose
-Educational tool for comparing algorithm performance through real metrics, input handling, and multiple implementations. Perfect for DSA coursework, hackathons, and interviews.
 
- Future Enhancements
-Automated test cases (random/sorted/reverse)
 
-File I/O support
 
-Algorithm visualizations
 
-CSV export of metrics
 
-Built with ❤️ for algorithm enthusiasts | Ready for production!
+
+
+
+
+
+
+
+
+
+
